@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Campus Navigation and Assistance System">
+  <title>Smart Campus | Navigation & Assistance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status"></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home">
+      <span class="brand-mark">SC</span>
+      <span><strong>Smart Campus</strong><small>Navigation & Assistance</small></span>
+    </a>
+    <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="#" data-page="home" class="nav-link active">Home</a>
+      <a href="#" data-page="map" class="nav-link">Campus map</a>
+      <a href="#" data-page="facilities" class="nav-link">Facilities</a>
+      <a href="#" data-page="announcements" class="nav-link">Updates</a>
+      <a href="#" data-page="help" class="nav-link">Emergency help</a>
+    </nav>
+    <div class="top-actions" id="topActions">
+      <button class="btn btn-ghost" data-action="login">Log in</button>
+      <button class="btn btn-primary" data-action="register">Get started</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="page-home" class="page active">
+      <div class="hero section-wrap">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAMPUS, MADE SIMPLE</span>
+          <h1>Find your way.<br><span>Feel at home.</span></h1>
+          <p class="hero-text">A smarter way for students, faculty and visitors to explore campus, discover facilities and stay informed.</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary btn-large" data-page="map">Explore campus <span>↗</span></button>
+            <button class="btn btn-light btn-large" data-action="register">Create an account</button>
+          </div>
+          <div class="hero-note"><span class="avatar-stack"><i> S </i><i> F </i><i> V </i></span><span>One helpful place for the whole campus community</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="art-glow"></div>
+          <div class="map-preview">
+            <div class="map-preview-top"><span>Campus explorer</span><span class="live-pill">● DEMO MAP</span></div>
+            <div class="mini-map">
+              <div class="road road-a"></div><div class="road road-b"></div><div class="road road-c"></div>
+              <div class="map-building b1"><span>▦</span><small>LIBRARY</small></div>
+              <div class="map-building b2"><span>▤</span><small>LABS</small></div>
+              <div class="map-building b3"><span>▥</span><small>BLOCK A</small></div>
+              <div class="map-building b4"><span>▧</span><small>CANTEEN</small></div>
+              <div class="map-pin pin-one">●</div><div class="map-pin pin-two">●</div>
+              <div class="map-path"></div>
+            </div>
+            <div class="map-preview-bottom"><span>⌖ Search a place</span><span>↗</span></div>
+          </div>
+          <div class="floating-card floating-one"><span class="float-icon teal">⌖</span><span><b>Easy navigation</b><small>Find places faster</small></span></div>
+          <div class="floating-card floating-two"><span class="float-icon yellow">✦</span><span><b>Campus updates</b><small>Stay in the loop</small></span></div>
+        </div>
+      </div>
+      <section class="section-wrap quick-search">
+        <div><span class="eyebrow">CAMPUS DIRECTORY</span><h2>Where would you like to go?</h2></div>
+        <form id="homeSearch" class="search-box"><span>⌕</span><input id="homeSearchInput" placeholder="Try Library, Canteen, Computer Lab..." autocomplete="off"><button class="btn btn-primary">Search</button></form>
+      </section>
+      <section class="section-wrap feature-section">
+        <div class="section-heading"><div><span class="eyebrow">EVERYTHING IN ONE PLACE</span><h2>Campus life, made easier.</h2></div><p>Useful tools to help you find places, get information and stay connected.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon lavender">⌖</span><h3>Interactive campus map</h3><p>Explore key buildings and important campus locations.</p><button data-page="map" class="text-link">Explore map ↗</button></article>
+          <article class="feature-card"><span class="feature-icon mint">⌕</span><h3>Quick location search</h3><p>Search for classrooms, labs, departments and facilities.</p><button data-page="map" class="text-link">Find a place ↗</button></article>
+          <article class="feature-card"><span class="feature-icon peach">▤</span><h3>Facility information</h3><p>View helpful details about campus buildings and services.</p><button data-page="facilities" class="text-link">View facilities ↗</button></article>
+          <article class="feature-card"><span class="feature-icon pink">♢</span><h3>Announcements & events</h3><p>Keep up with notices, seminars and campus activities.</p><button data-page="announcements" class="text-link">See updates ↗</button></article>
+        </div>
+      </section>
+      <section class="section-wrap callout"><div><span class="eyebrow">NEED A HAND?</span><h2>Help is always close by.</h2><p>Find important contact information and send suggestions to improve campus information.</p></div><button class="btn btn-dark" data-page="help">Get assistance ↗</button></section>
+    </section>
+
+    <section id="page-login" class="page"><div class="auth-wrap"><div class="auth-card"><span class="eyebrow">WELCOME BACK</span><h1>Log in to Smart Campus</h1><p class="muted">Access your campus tools and updates.</p><form id="loginForm" class="form-stack"><label>Email address<input type="email" id="loginEmail" required placeholder="you@example.com"></label><label>Password<input type="password" id="loginPassword" required placeholder="Enter your password"></label><button class="btn btn-primary btn-block">Log in</button></form><p class="auth-switch">New here? <button class="text-link" data-action="register">Create an account</button></p><div class="demo-note"><b>Demo admin access</b><br>Email: admin@smartcampus.demo<br>Password: Admin123!</div></div></div></section>
+
+    <section id="page-register" class="page"><div class="auth-wrap"><div class="auth-card"><span class="eyebrow">JOIN THE COMMUNITY</span><h1>Create your account</h1><p class="muted">Register to explore campus services.</p><form id="registerForm" class="form-stack"><label>Full name<input id="regName" required placeholder="Your name"></label><label>Email address<input id="regEmail" type="email" required placeholder="you@example.com"></label><label>I am a<select id="regRole"><option>Student</option><option>Faculty</option><option>Visitor</option></select></label><label>Password<input id="regPassword" type="password" minlength="6" required placeholder="At least 6 characters"></label><button class="btn btn-primary btn-block">Create account</button></form><p class="auth-switch">Already registered? <button class="text-link" data-action="login">Log in</button></p></div></div></section>
+
+    <section id="page-dashboard" class="page"><div class="section-wrap page-content"><div class="page-title-row"><div><span class="eyebrow">YOUR CAMPUS SPACE</span><h1 id="welcomeTitle">Welcome!</h1><p class="muted">Here are the tools and updates you may need today.</p></div><span class="role-chip" id="roleChip">Student</span></div><div class="stats-grid"><div class="stat-card"><span>Campus locations</span><b id="locationCount">8</b><small>In the directory</small></div><div class="stat-card"><span>Announcements</span><b id="announcementCount">3</b><small>Latest updates</small></div><div class="stat-card"><span>Your role</span><b id="dashboardRole">Student</b><small>Campus account</small></div></div><div class="dashboard-grid"><button class="dashboard-tile" data-page="map"><span class="feature-icon lavender">⌖</span><b>Find a location</b><small>Search and plan a route</small></button><button class="dashboard-tile" data-page="facilities"><span class="feature-icon mint">▤</span><b>Explore facilities</b><small>View building information</small></button><button class="dashboard-tile" data-page="announcements"><span class="feature-icon peach">♢</span><b>Campus updates</b><small>Notices and events</small></button><button class="dashboard-tile" data-page="feedback"><span class="feature-icon pink">☆</span><b>Share feedback</b><small>Help us improve</small></button></div><div id="adminPanel" class="admin-panel hidden"><div class="section-heading"><div><span class="eyebrow">ADMINISTRATION</span><h2>Manage campus content</h2></div></div><div class="admin-actions"><button class="btn btn-primary" data-action="add-location">+ Add location</button><button class="btn btn-light" data-action="add-announcement">+ Add announcement</button><button class="btn btn-light" data-page="feedback">View feedback</button></div><p class="muted small">Changes made in this demo are saved only in this browser.</p></div></div></section>
+
+    <section id="page-map" class="page"><div class="section-wrap page-content"><div class="page-title-row"><div><span class="eyebrow">EXPLORE YOUR SURROUNDINGS</span><h1>Campus map & navigation</h1><p class="muted">Choose a starting point and destination to see a sample route.</p></div><span class="demo-label">ILLUSTRATIVE DEMO MAP</span></div><div class="map-layout"><div class="map-panel"><div class="map-panel-head"><b>Campus directory map</b><span class="live-pill">● SAMPLE DATA</span></div><div id="campusMap" class="campus-map" aria-label="Illustrative campus map"></div><div class="map-legend"><span><i class="legend-dot dot-building"></i> Buildings</span><span><i class="legend-dot dot-green"></i> Open area</span><span><i class="legend-dot dot-route"></i> Sample route</span></div></div><aside class="route-panel"><h2>Plan your route</h2><p class="muted small">Select any two campus locations.</p><label>Starting point<select id="routeStart"></select></label><label>Destination<select id="routeEnd"></select></label><button id="routeButton" class="btn btn-primary btn-block">Show route ↗</button><div id="routeResult" class="route-result">Your route details will appear here.</div><div class="directory-list"><b>Popular locations</b><div id="popularLocations"></div></div></aside></div></div></section>
+
+    <section id="page-facilities" class="page"><div class="section-wrap page-content"><div class="page-title-row"><div><span class="eyebrow">CAMPUS DIRECTORY</span><h1>Facilities & buildings</h1><p class="muted">Discover the services available around campus.</p></div></div><div class="filter-row"><input id="facilitySearch" placeholder="Search facilities..."><select id="facilityCategory"><option value="All">All categories</option><option>Academic</option><option>Student services</option><option>Food</option><option>Administration</option></select></div><div id="facilityGrid" class="facility-grid"></div></div></section>
+
+    <section id="page-announcements" class="page"><div class="section-wrap page-content"><div class="page-title-row"><div><span class="eyebrow">WHAT'S HAPPENING</span><h1>Announcements & events</h1><p class="muted">A central place for campus notices and activities.</p></div></div><div id="announcementList" class="announcement-list"></div></div></section>
+
+    <section id="page-help" class="page"><div class="section-wrap page-content"><div class="page-title-row"><div><span class="eyebrow">SUPPORT & ASSISTANCE</span><h1>How can we help?</h1><p class="muted">Use these sample contact entries as placeholders. Replace them with verified college contacts.</p></div></div><div class="help-grid"><article class="help-card"><span class="feature-icon pink">☎</span><h3>Campus security</h3><p>For campus safety-related assistance.</p><b>Update with official number</b></article><article class="help-card"><span class="feature-icon peach">✚</span><h3>Medical assistance</h3><p>For first-aid and medical support information.</p><b>Update with official number</b></article><article class="help-card"><span class="feature-icon lavender">▣</span><h3>College office</h3><p>For administrative enquiries and support.</p><b>Update with official number</b></article></div><div class="notice-box"><b>Important:</b> This demonstration does not contact emergency services. Add and verify your institution's official emergency contacts before using this feature.</div></div></section>
+
+    <section id="page-feedback" class="page"><div class="section-wrap page-content narrow"><span class="eyebrow">YOUR VOICE MATTERS</span><h1>Share your feedback</h1><p class="muted">Tell us what worked well or what needs to be improved.</p><form id="feedbackForm" class="form-card form-stack"><label>Your name<input id="feedbackName" required placeholder="Your name"></label><label>Feedback type<select id="feedbackType"><option>Suggestion</option><option>Incorrect location</option><option>Facility information</option><option>Website issue</option></select></label><label>Rating<select id="feedbackRating"><option value="5">★★★★★ — Excellent</option><option value="4">★★★★ — Good</option><option value="3">★★★ — Average</option><option value="2">★★ — Needs improvement</option><option value="1">★ — Poor</option></select></label><label>Message<textarea id="feedbackMessage" rows="5" required placeholder="Write your feedback..."></textarea></label><button class="btn btn-primary">Submit feedback</button></form></div></section>
+  </main>
+
+  <footer class="footer"><div class="section-wrap footer-inner"><a class="brand footer-brand" href="#" data-page="home"><span class="brand-mark">SC</span><span><strong>Smart Campus</strong><small>Find. Navigate. Connect.</small></span></a><p>© <span id="year"></span> Smart Campus Navigation & Assistance System</p><button class="text-link" data-page="feedback">Send feedback ↗</button></div></footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-card"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalContent"></div></div></div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
