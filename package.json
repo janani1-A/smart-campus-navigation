@@ -1,0 +1,14 @@
+
+{
+  "name": "smart-campus-navigation",
+  "version": "1.0.0",
+  "description": "Smart Campus Navigation System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.3.0"
+  }
+}

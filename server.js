@@ -4,13 +4,13 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 3005;
+const PORT = process.env.PORT || 3005;
 
 const usersFile = path.join(__dirname, "users.json");
 
 app.use(express.json());
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
+    res.setHeader("Access-Control-Allow-Origin", "https://janani1-A.github.io");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
